@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Statement - [Charity Name]</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            color: #000000;
+            background: #ffffff;
+        }
+        
+        .official-header {
+            background: #ffffff;
+            border-bottom: 1px solid #000000;
+            padding: 0;
+        }
+        
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 60px 30px 60px;
+            display: grid;
+            grid-template-columns: 120px 1fr 120px;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo-left-img {
+            width: 115px;
+            height: auto;
+        }
+        
+        .header-center {
+            text-align: center;
+        }
+        
+        .org-name {
+            font-size: 2em;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .org-designation {
+            font-size: 0.85em;
+            color: #000000;
+            margin: 5px 0;
+            letter-spacing: 1px;
+        }
+        
+        .org-registration {
+            font-size: 0.75em;
+            color: #333333;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        .seal-right {
+            width: 120px;
+            height: 120px;
+            border: 3px double #000000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f9f9f9;
+            font-size: 0.6em;
+            text-align: center;
+            color: #666;
+            padding: 15px;
+            font-weight: bold;
+        }
+        
+        .document-header {
+            background: #000000;
+            color: #ffffff;
+            padding: 15px 60px;
+            text-align: center;
+            font-size: 0.95em;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-left: 1px solid #cccccc;
+            border-right: 1px solid #cccccc;
+        }
+        
+        .content {
+            padding: 60px 80px;
+        }
+        
+        .document-number {
+            text-align: right;
+            font-size: 0.85em;
+            margin-bottom: 30px;
+            color: #333333;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .document-title {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-top: 3px double #000000;
+            border-bottom: 3px double #000000;
+            padding: 20px 0;
+        }
+        
+        .document-meta {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #000000;
+        }
+        
+        .meta-row {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            padding: 8px 0;
+            border-bottom: 1px solid #cccccc;
+        }
+        
+        .meta-row:last-child {
+            border-bottom: none;
+        }
+        
+        .meta-label {
+            font-weight: bold;
+            color: #000000;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-number {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+        }
+        
+        .section p:first-of-type {
+            text-indent: 0;
+        }
+        
+        .official-box {
+            border: 2px solid #000000;
+            padding: 30px;
+            margin: 40px 0;
+            background: #f9f9f9;
+        }
+        
+        .box-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 15px;
+        }
+        
+        .official-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .official-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #cccccc;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 20px;
+        }
+        
+        .official-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .list-label {
+            font-weight: bold;
+            color: #000000;
+        }
+        
+        .notice-box {
+            border: 2px solid #000000;
+            background: #ffffff;
+            padding: 25px;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .notice-header {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            padding: 0 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .notice-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        
+        .notice-list li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+        }
+        
+        .notice-list li:before {
+            content: "▪";
+            position: absolute;
+            left: 10px;
+            font-weight: bold;
+        }
+        
+        .signature-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #000000;
+        }
+
+        
+        .document-footer {
+            background: #000000;
+            color: #ffffff;
+            padding: 30px 60px;
+            text-align: center;
+            font-size: 0.8em;
+            border-top: 3px solid #000000;
+        }
+        
+        .footer-line {
+            margin: 5px 0;
+        }
+        
+        .authenticity-statement {
+            margin-top: 50px;
+            padding: 25px;
+            border: 1px solid #000000;
+            background: #f9f9f9;
+            font-size: 0.85em;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        @media print {
+            .container {
+                border: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+                gap: 20px;
+            }
+            
+            .logo-left, .seal-right {
+                margin: 0 auto;
+            }
+            
+            .content {
+                padding: 40px 20px;
+            }
+
+            .official-list li {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+            
+            .meta-row {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="official-header">
+        <div class="header-content">
+            <div class="logo-left">
+                <img src="logo.png" class="logo-left-img">
+            </div>
+            <div class="header-center">
+                <div class="org-name">Freedom For One Ummah /</br>La Liberté d’une Oumma</div>
+                <div class="org-designation">FEDERALLY INCORPORATED CHARITABLE ORGANIZATION</div>
+                <div class="org-designation">NOT-FOR-PROFIT ENTITY</div>
+                <div class="org-registration">Registration No. 759481567</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="document-header">
+        OFFICIAL ORGANIZATIONAL STATEMENT
+    </div>
+    
+    <div class="container">
+        <div class="content">
+            <div class="document-number">
+                DOCUMENT NO.: CRA-5646-5202<br>
+                ISSUE DATE: 25 NOVEMBER 2025<br>
+                CLASSIFICATION: PUBLIC RECORD
+            </div>
+            
+            <h1 class="document-title">
+                Official Statement to Public
+            </h1>
+            
+            <div class="document-meta">
+                <div class="meta-row">
+                    <div class="meta-label">FROM:</div>
+                    <div>Freedom For One Ummah / La Liberté d’une Oumma</div>
+                </div>
+                <div class="meta-row">
+                    <div class="meta-label">TO:</div>
+                    <div>All Donors, and Members of the General Public</div>
+                </div>
+                <div class="meta-row">
+                    <div class="meta-label">DATE:</div>
+                    <div>25 November 2025</div>
+                </div>
+                <div class="meta-row">
+                    <div class="meta-label">RE:</div>
+                    <div>Organizational Status, Digital Infrastructure Development, and Transparency Commitment</div>
+                </div>
+            </div>
+            
+            <section class="section">
+                <div class="section-number">I. Purpose of Statement</div>
+                <p>This official statement is hereby issued to address inquiries received from members of the public and prospective donors concerning the current status of our organization's digital infrastructure and to provide comprehensive transparency regarding our operational status as a newly incorporated federal charitable entity operating under the legal framework governing not-for-profit organizations.</p>
+            </section>
+            
+            <section class="section">
+                <div class="section-number">II. Current Legal and Operational Status</div>
+                <p>We hereby notify all interested parties that our organization has successfully completed all requisite procedures for federal charitable incorporation and is presently engaged in the active establishment phase of full operational capacity. Domain registration has been duly secured, and the development of a comprehensive digital platform is currently in progress. Said platform shall provide detailed and verifiable information concerning our organizational mission, programmatic operations, governance structure, and documented community impact metrics.</p>
+                <p>All necessary regulatory compliance measures have been satisfied, and our organization maintains full legal standing as a federally recognized charitable entity authorized to receive tax-deductible contributions in accordance with applicable federal statutes.</p>
+            </section>
+            
+            <section class="section">
+                <div class="section-number">III. Operational Philosophy and Historical Context</div>
+                <p>Our organization adheres to a distinctive operational philosophy wherein direct community service and beneficiary assistance preceded formal administrative incorporation. Prior to the completion of federal registration procedures, our personnel were actively engaged in providing direct assistance to individuals and families within our designated service area. This methodology reflects our foundational commitment to measurable community impact rather than premature allocation of resources toward administrative infrastructure development.</p>
+                <p>Available financial resources were deliberately and systematically directed toward direct beneficiary assistance programs rather than expenditure on marketing materials or premature digital infrastructure. This operational history serves as verifiable evidence of our genuine commitment to charitable service delivery and our dedication to maximizing the percentage of funds directed to program services rather than administrative overhead.</p>
+            </section>
+            
+            <section class="section">
+                <div class="section-number">IV. Explanation Regarding Digital Infrastructure Timeline</div>
+                <p>We acknowledge that contemporary philanthropic best practices reasonably anticipate immediate digital presence from charitable organizations. We provide the following official explanation: our organizational priorities have been systematically directed toward ensuring complete legal compliance through proper federal incorporation procedures and maintaining continuous allocation of available funds toward direct charitable service delivery activities.</p>
+                <p>Our organization has now achieved the operational maturity whereby digital infrastructure development can proceed concurrently with ongoing programmatic service delivery without compromising our commitment to maximizing direct beneficiary impact.</p>
+            </section>
+            
+            <div class="official-box">
+                <div class="box-title">Official Organizational Commitments</div>
+                <ul class="official-list">
+                    <li>
+                        <span class="list-label">Legal Compliance:</span>
+                        <span>Federally incorporated charitable organization maintaining full regulatory compliance with all applicable federal and jurisdictional statutes</span>
+                    </li>
+                    <li>
+                        <span class="list-label">Financial Transparency:</span>
+                        <span>Comprehensive financial documentation, audited statements, and regulatory reporting to be published upon completion of digital platform</span>
+                    </li>
+                    <li>
+                        <span class="list-label">Operational Integrity:</span>
+                        <span>Direct beneficiary assistance and program service delivery supersede administrative and marketing expenditure in budgetary allocation</span>
+                    </li>
+                    <li>
+                        <span class="list-label">Stakeholder Accountability:</span>
+                        <span>All inquiries, oversight requests, and due diligence investigations welcomed through established official communication channels</span>
+                    </li>
+                    <li>
+                        <span class="list-label">Governance Standards:</span>
+                        <span>Adherence to established best practices in charitable governance, fiduciary responsibility, and ethical conduct</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="notice-box">
+                <div class="notice-header">FORTHCOMING DEVELOPMENTS</div>
+                <ul class="notice-list">
+                    <li>Comprehensive website launch including detailed mission statement, governance structure, and complete program specifications</li>
+                    <li>Secure donor information portal with contribution processing capabilities and tax receipt generation</li>
+                    <li>Published beneficiary testimonials, documented case studies, and measurable impact assessments</li>
+                    <li>Quarterly financial transparency reports and complete regulatory compliance documentation</li>
+                    <li>Annual audited financial statements prepared in accordance with generally accepted accounting principles</li>
+                    <li>Board member biographies and organizational governance policies</li>
+                </ul>
+            </div>
+            
+            <section class="section">
+                <div class="section-number">V. Contact Information and Inquiry Procedures</div>
+                <p>For official correspondence, verification requests, or inquiries regarding organizational status, please direct all communications to the following official channels:</p>
+                <p style="text-indent: 0; margin-top: 20px;">
+                    <strong>CRA Registration Number:</strong> 759481567RC0001
+                </p>
+            </section>
+            
+            <section class="signature-section">
+                <p>We acknowledge and appreciate inquiries regarding organizational legitimacy and operational transparency. Such scrutiny represents appropriate due diligence in philanthropic engagement and reflects responsible donor behavior. Our organization is irrevocably committed to establishing and maintaining sustainable, impactful, and fully transparent charitable operations in perpetuity.</p>
+                
+                <p>We express our gratitude for public confidence in our mission and the opportunity to serve our community in accordance with the highest standards of charitable service delivery.</p>
+            </section>
+            
+            <div class="authenticity-statement">
+                This document constitutes an official statement issued by Freedom For One Ummah, a federally incorporated charitable organization operating under Registration No. 759481567. The information contained herein is accurate and complete to the best of our knowledge as of the date of publication. This statement is a matter of public record and may be reproduced for verification purposes.
+            </div>
+        </div>
+    </div>
+    
+    <div class="document-footer">
+        <div class="footer-line"><strong>Freedom For One Ummah</strong></div>
+        <div class="footer-line">Federally Incorporated Charitable Organization | CRA Registration No. 759481567RC0001</div>
+        <div class="footer-line">Freedom For One Ummah acknowledges the unceded Traditional Coast Salish Lands including the Squamish (Sḵwx̱wú7mesh Úxwumixw), Tsleil-Waututh (səl̓ilw̓ətaʔɬ) and Musqueam (xʷməθkʷəy̓əm) Nations.</div>
+        <div class="footer-line" style="margin-top: 15px;">© 2025 All Rights Reserved | This is an Official Document</div>  
+    </div>
+</body>
+</html>
